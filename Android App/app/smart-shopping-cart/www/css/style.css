@@ -1,0 +1,735 @@
+/* Reset CSS http://meyerweb.com/eric/tools/css/reset/
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Reset CSS end */
+
+/*font*/
+@font-face {
+   font-family: OpenSans;
+   src: url(OpenSans-Regular.ttf);
+}
+
+@font-face {
+   font-family: OpenSans;
+   src: url(OpenSans-Bold.ttf);
+   font-weight: bold;
+}
+
+
+
+
+body{
+    font-family: "OpenSans";
+    font-weight: bold;
+}
+p{
+    font-weight: normal;
+}
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+input{
+    text-align: center;
+}
+
+
+.platform-ios .manual-ios-statusbar-padding{
+    padding-top:20px;
+}
+.manual-remove-top-padding{
+    padding-top:0px;
+}
+.manual-remove-top-padding .scroll{
+    padding-top:0px !important;
+}
+ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+    margin-left:-10px;
+    margin-right:-10px;
+}
+ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+    border-radius:0px;
+    border-left:0px;
+    border-right: 0px;
+}
+
+/*drelion.html*/
+
+/* horizontal nav */
+/* https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp#contact */
+/*
+ion-scroll.scrollmenu {
+    background-color: #f3f3f4;
+    overflow: auto;
+    white-space: nowrap;
+    box-shadow:  0 6px 15px 0 rgba(0, 0, 2, 0.19);
+    position: fixed;
+    width: 100%;
+}
+
+ion-scroll.scrollmenu a {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    color: #249bdf;
+    font-weight:500;
+    font-size: 12px;
+}
+ion-scroll.scrollmenu a:hover {
+    font-weight: bolder;
+}
+
+ion-scroll.scrollmenu a.active{
+    font-weight: bolder;
+}
+
+*/
+.circle-with-text {
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+}
+.container {
+    position: relative;
+}
+.bottomleft {
+    position: absolute;
+    left: 52px;
+    bottom: 60px;
+    text-align: left;
+}
+
+.bottomright {
+    position: absolute;
+    right: 2%;
+    bottom: 10%;
+    text-align: left;
+}
+.right{
+    position: absolute;
+    right:0%;
+}
+.left{
+    position: absolute;
+    left:0%;
+}
+.bottom{
+    position: absolute;
+    bottom: 0%;
+}
+.center_ver{
+    position: absolute;
+    left:50%;
+}
+.center_hon{
+    position: absolute;
+    top:50%;
+}
+.overallPos{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.lable1{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: -8px;
+}
+.lable2{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#label{
+    position: absolute;
+    left: 7%;
+    bottom: 24%;
+    text-align: left;
+}
+
+#label-rec{
+    position: absolute;
+    left: 7%;
+    bottom: 24%;
+    text-align: left;
+
+
+}
+
+
+#label-rec > h{
+    width:280px;
+    display:table-caption;
+    font-size: 24px;
+
+    letter-spacing: 0.5px;
+    color:#ffffff;
+    font-weight: bold;
+}
+
+
+
+#label-rec > div> p{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color:#ffffff;
+    padding: 4px 6px;
+    margin-top:8px;
+    margin-left: 0px;
+    background-color: #249bdf;
+    border-radius: 10px;
+
+}
+
+
+#label > h{
+    width:160px;
+    display:table-caption;
+    font-size: 24px;
+
+    letter-spacing: 0.5px;
+    color:#ffffff;
+    font-weight: bold;
+}
+#label > div> p{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color:#ffffff;
+    padding: 4px 6px;
+    margin-top:8px;
+    margin-left: 0px;
+    background-color: #249bdf;
+    border-radius: 10px;
+
+}
+form > label > input{
+    text-align: right;
+}
+form > label > input{
+    text-align: right;
+}
+ .orderCompleted_popup .popup{
+    width:70%;
+    height:wrap-content;/*
+    background: url(../img/dialog_background.png);
+    background-size:100% 100%;*/
+    text-align:center;
+    color: #5e5e5f;
+    border-radius: 10px;
+  }
+ .orderCompleted_popup .popup img{
+      width:65%;
+      height:auto;
+      margin-top:35px;
+      magrin-left:auto;
+      magrin-right:auto;
+  }
+.orderCompleted_popup .popup *{
+     /*margin-top: 15px;*/
+}
+.orderCompleted_popup .popup h{
+    font-size: 26px;
+    padding-left: 16px;
+
+}
+.orderCompleted_popup .popup  a{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.orderCompleted_popup .popup-buttons .button{
+    background-color:#249bdf;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.homehelp .popup{
+   width:95%;
+   height:95%;
+   text-align:center;
+   color: #5e5e5f;
+   border-radius: 10px;
+ }
+.homehelp .popup img{
+     width:100%;
+     height:auto;
+     border-radius: 10px;
+     margin-top:0px;
+     magrin-left:0px;
+     magrin-right:0px;
+ }
+.homehelp .popup *{
+    /*margin-top: 15px;*/
+}
+.homehelp .popup h{
+   font-size: 26px;
+   padding-left: 16px;
+
+}
+.homehelp .popup  a{
+   margin-left: 40px;
+   margin-right: 40px;
+}
+.homehelp .popup-buttons .button{
+   background-color:#249bdf;
+   font-weight: bold;
+   border-radius: 5px;
+}
+
+
+.noInternetPopup .popup{
+  width: 80%;
+  border-radius: 12px;
+  text-align:center;
+  color: #5e5e5f;
+ }
+.noInternetPopup .popup-title{
+    font-size: 16px;
+}
+.noInternetPopup .popup-sub-title{
+    font-size: 12px;
+}
+.noInternetPopup .popup-head{
+    margin-bottom: -10px;
+    border-color: grey;
+}
+.noInternetPopup .popup-buttons{
+    height: 60px;
+    min-height: 60px;
+}
+.noInternetPopup .popup-buttons .button{
+    color: #249bdf;
+    font-weight: bold;
+}
+
+
+.userAlertPopup .popup{
+  width: 80%;
+  border-radius: 12px;
+  text-align:center;
+  color: #5e5e5f;
+ }
+.userAlertPopup .popup-title{
+    font-size: 18px;
+}
+.userAlertPopup .popup-sub-title{
+    font-size: 10px;
+}
+
+.userAlertPopup .popup-buttons .button.button-positive {
+    border-color: transparent;
+    background-color: #249bdf;
+    color: #fff;
+}
+.userAlertPopup .popup-buttons .button{
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.confirm_button{
+    background-color:#249bdf;
+}
+.signup_login_label{
+
+}
+a{
+    box-shadow: 0px 0px 0px #bcbcbc;
+}
+.right2{
+    position: absolute;
+    right:3%;
+    bottom: 10.5%;
+}
+
+.bottom2{
+    position: absolute;
+    left:0%;
+    bottom: 0%;
+}
+
+.addremovebutton{
+    position: absolute;
+    left:0%;
+    font-size:20px;
+    margin-left:15px;
+    color:#c2c2d0;
+}
+
+#addremove{
+    position: absolute;
+    right:1.5%;
+    bottom: 8.8%;
+    height:86.5%;
+    width:24.5%;
+    border-radius: 0px 8px 8px 0px;
+    background-color:#ffffff00;
+    opacity:1;
+    /*text-align: center;*/
+}
+#addremove > div >*{
+    position: absolute;
+    left:50%;
+    font-size:28px;
+    margin-left: -10px;
+    color:#ffffff;
+}
+#addremove > span {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:-7.5px;
+    margin-left:-16px;
+    text-align:center;
+    width:50px;
+    color:#ffffff;
+    background-color: #249bdf;
+    border-radius: 30px;
+        font-size: 12px;
+    letter-spacing: 0.2px;
+ 
+    padding: 4px 6px;
+
+
+}
+/*
+input placeholder
+*/
+#postalCode input::-webkit-input-placeholder {
+
+    color: white;
+}
+#postalCode input::-moz-placeholder {
+
+    color: white;
+}
+#postalCode input::-ms-input-placeholder {
+
+    color: white;
+}
+#postalCode input::-input-placeholder {
+
+    color: white;
+}
+
+
+/*
+color #3b5998
+http://www.w3schools.com/w3css/w3css_color_themes.asp
+*/
+/*
+.theme-color-background-l1 {color:#fff !important; background-color:#5273bc !important}
+*/
+.theme-color-background-l1 {color:#fff !important; background-color:#1e6c9a !important}
+
+.theme-color-l1{color:#5273bc}
+/*
+.theme-color-background-d1 {color:#fff !important; background-color:#354f87 !important}
+*/
+.theme-color-background-d1 {color:#fff !important; background-color:#2694ff !important}
+/*
+.theme-color-background-d2 {color:#fff !important; background-color:#2f4678 !important}
+*/
+.theme-color-background-d2 {color:#249bdf !important; background-color:#f3f3f4 !important}
+
+
+/*.theme-color-background {color:#fff !important; background-color:#3b5998 !important}*/
+.theme-color-background {color:#fff !important; background-color:#2694ff !important}
+
+
+/*menu*/
+/*Set the background to transparent for ion-item
+http://codepen.io/mhartington/pen/qafgv
+*/
+.theme-color-background .item {
+  background-color: transparent;
+  border: none;
+  /*
+  border-top: 1px solid;
+  border-bottom: 2px solid;
+  border-color: #0000cc;
+  */
+  color: #F0F1F1;
+}
+
+/*Changes the border for the last item*/
+.theme-color-background .item:last-child {
+  border-bottom: 1px solid #333333;
+}
+
+/*Ion-item adds item-complex and an inner div, .item-content*/
+/* this needs to be transparent too, but doesnt need borders*/
+.theme-color-background .item-complex .item-content, .theme-color-background .item-radio .item-content {
+  background-color: transparent;
+}
+
+
+/*Just makes the type white*/
+.theme-color-background h2,
+.theme-color-background h3,
+.theme-color-background p,
+.theme-color-background a {
+  color: #F0F1F1;
+}
+
+
+/* header title*/
+.bar.bar-stable .title {
+    font-weight: bold;
+    color: #249bdf; }
+
+.bar.bar-stable .button {
+    color: #fff; }
+
+.ionic_datepicker_popup {
+  $date-picker-colour: #249bdf;
+
+  .selected_date_full,
+  .selected_date,
+  .popup-buttons .button {
+    background-color: $date-picker-colour !important;
+  }
+  .month_select,
+  .year_select,
+  .today {
+    border-color: $date-picker-colour !important;
+  }
+  .item-select:after,
+  .button-clear {
+    color: $date-picker-colour !important;
+  }
+}
+/* add space between icon + text */
+i + span {
+    margin-left: 10px;
+}
+
+
+.inline {
+    display: inline;
+}
+/* */
+.avatar-frame{border: 2px solid #c7b89e;}
+.avatar-frame,.avatar-frame img{
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 30px; /* Saf3+, Chrome */
+    border-radius: 30px; /* Opera 10.5, IE 9 */
+    /*-moz-border-radius: 30px;  Disabled for FF1+ */
+    }
+
+tr {
+    border-bottom: 1px solid #a8b9dd;
+
+}
+tr:last-child {
+    border-bottom: none;
+}
+td {
+    padding: 20px 0px 20px;
+    height: 20px;
+}
+/*
+td {
+    height: 60px;
+    vertical-align: middle;
+    text-align: left;
+
+}
+th {
+    text-align: left;
+    border-bottom: 2px solid #a8b9dd;
+}
+tr {
+
+    vertical-align: middle;
+    text-align: left;
+    border-bottom: 1px solid #a8b9dd;
+}
+tr:last-child {
+    border-bottom: none;
+}
+*/
+#orderPlaced .checkmark {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+#orderPlaced .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 2s ease-in-out;
+  -webkit-animation: dash 2s ease-in-out;
+}
+
+#orderPlaced .spin {
+  animation: spin 2s;
+  -webkit-animation: spin 2s;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+#orderPlaced p {
+  font-family: sans-serif;
+  color: pink;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px auto;
+  text-align: center;
+  animation: text .5s linear .4s;
+  -webkit-animation: text .4s linear .3s;
+}
+
+/*yourProfile.html*/
+
+#yourProfile_form label input, #yourProfile_form label select{
+    font-weight: bold;
+    font-size: 11pt;
+    padding-right:40px;
+}
+/*
+#yourProfile_form label select{
+    font-size: 11pt;
+    font-weight: bold;
+    padding-right: 40px;
+}
+*/
+#yourProfile_form label .date_input{
+    font-size: 11pt;
+    position: fixed;
+    font-weight: bold;
+    right:40px;
+}
+
+#voucher{
+    margin: 10px 40px 20px 10px;
+}
+#voucherDiv{
+    margin-top: 10px;
+}
+#voucherDiv div input{
+    text-align:left;
+    height:30px;"
+}
+#voucherDiv button{
+    border: none;
+    float: right;
+    height: 30px;
+    background-color: #e7e7e7; color: #249bdf;
+    font-size: 10pt;
+}
+#voucherMsg{
+    margin-top: 5px;
+    font-size: 10pt;
+    color: red;
+}
+#discount{
+    margin-top: 20px;
+}
+#discount #discount_price{
+    float: right;
+}
+
+@-webkit-keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
+}
+
+@keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes text {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+  }
+
+
+  @keyframes text {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+  }
+}

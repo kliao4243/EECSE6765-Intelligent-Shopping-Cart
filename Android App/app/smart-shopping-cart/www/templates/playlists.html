@@ -1,0 +1,51 @@
+<ion-view view-title="Shopping Cart" style="background: url(img/home_background.png);background-size:100% 100%;">
+  <ion-content>
+   <ion-scroll scrollbar-x="false" scrollbar-y="false" style="width: 100%; height: 100%;">
+
+  <div class="container"   ng-repeat="item in recommends">
+          <div>
+            <img  ng-src="{{item.img}}" style="border-radius: 10px;opacity:0.80;"></img>
+          </div>
+          <div id="label-rec" >
+            <h>Recommend For You {{item.name}}</h>
+            <div>
+            <p style="background-color: hsl(14, 100%, 53%);">${{item.price| number : 2}}</p>
+            </div>
+          </div>
+  </div>
+
+
+        <div class="container"  ng-repeat="item in items">
+          <div>
+            <img  ng-src="{{item.img}}" style="border-radius: 10px;opacity:0.80;"></img>
+          </div>
+          <div id="label">
+            <h>{{item.name}}</h>
+            <div>
+            <p style="${{item.setPriceStyle()}}">${{item.price| number : 2}}</p>
+            </div>
+          </div>
+
+          <div id="addremove">  
+            <span>
+              <h style="font-size: 18px;" id="main_quatity">
+              {{item.s}}
+              </h>
+            </span>
+          </div>
+
+        </div>
+
+  </ion-scroll> 
+
+
+
+
+  </ion-content>
+  <ion-footer-bar  class="bar-positive" style="background-color:#1e6c9a;" ui-sref="menu.cart">
+  <div>
+    <p class="title" style="text-align: left;font-weight:bold;">Pay Now</p>
+    <p id="price_total"  ng-model="cur_price" class="title" ng-click="sendorder()" style="text-align: right;font-weight:bold;">Price: ${{cur_price| number : 2}}</p>
+  </div>
+</ion-footer-bar>
+</ion-view>
