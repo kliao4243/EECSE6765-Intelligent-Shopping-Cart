@@ -106,7 +106,7 @@ var prelen = 0;
 
 
 var apigClient = apigClientFactory.newClient({
-  apiKey: '736V9ti1zw1T7IbmNAnTC62BuzfN49fIahHtiKD9'
+  apiKey: ''
 });
 
 
