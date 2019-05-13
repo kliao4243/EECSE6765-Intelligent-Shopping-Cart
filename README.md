@@ -10,3 +10,5 @@ To use code in this repository, you need:
 3. Create API gateway, and create your own API key. (We have deleted the API key in source code for safety reasons)
 4. Paste your API key into the apiGatewaybot functions.
 5. Build the mobile application and download it to your phone
+
+Demo video and detailed project information is available on https://iotcolumbia2019llha.weebly.com
