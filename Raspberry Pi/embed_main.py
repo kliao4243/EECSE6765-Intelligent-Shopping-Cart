@@ -1,6 +1,3 @@
-# Simple demo of reading each analog input from the ADS1x15 and printing it to
-# the screen.
-# License: Public Domain\
 import boto3
 import time
 import csv
@@ -46,6 +43,7 @@ price_dict = {
     "Water": "20.0"
 }
 
+# update database based on RFID information and current values in database
 def db_operation(userid, item, amount):
     dynamodb = aws.getResource('dynamodb', 'us-east-1')
     DYNAMO_TABLE_NAME = "shopping_cart"
@@ -82,7 +80,7 @@ def db_operation(userid, item, amount):
         )
 
 
-
+# if no RFID tag detected, capture a picture and upload to S3 bucket
 def s3_operation(filename, userid, amount):
     s3 = aws.getResource('s3', 'us-east-1')
     s3.Bucket('iot-bucket-llha').upload_file(filename, userid+'_'+str(amount)+'.jpg')
@@ -189,6 +187,7 @@ if __name__ == "__main__":
     time.sleep(0.5)
     stable_weight = 0
     flag = 0
+    # detect weight change from pressure sensors
     while True:
 
         if pos < 6:
