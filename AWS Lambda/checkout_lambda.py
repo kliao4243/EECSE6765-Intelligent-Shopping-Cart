@@ -6,11 +6,14 @@ def lambda_handler(event, context):
 	table = dynamodb.Table('shopping_cart')
 	response = table.scan()
 	result = list()
+	# create a temp to store unpaid items
 	temp_list = list()
 	for item in response["Items"]:
 	    if item["user_id"]==event["request"]:
-	    	temp_list.append(item['item']) 
+	    	temp_list.append(item['item'])
+		# use timestamp as key, store current shopping record to history purchashing table
 	    	temp_time = item["timestamp"]
+		# set the status of these items to paid
 	    	response = table.update_item(
 	            Key={
 	                'timestamp':temp_time
