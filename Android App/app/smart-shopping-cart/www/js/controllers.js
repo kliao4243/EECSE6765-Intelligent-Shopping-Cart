@@ -42,6 +42,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope, $interval, Items, $ionicPopup, $cordovaNativeAudio) {
+//detect OS
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -62,11 +63,12 @@ angular.module('starter.controllers', [])
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-
+//load alert audio
 if(isMobile.any())
   $cordovaNativeAudio.preloadSimple('click', 'res/get.mp3')
 
   var userid;
+  //login page
   $scope.data = {};
       // Custom popup
     $ionicPopup.show({
@@ -74,7 +76,7 @@ if(isMobile.any())
          title: 'Login',
          subTitle: 'Please enter cart id',
          scope: $scope,
-      
+
          buttons: [
             {
                text: '<b>OK</b>',
@@ -91,6 +93,7 @@ if(isMobile.any())
 
 var imgUrl = "img/logo.png";
 var prelen = 0;
+//complete order
  $scope.sendorder = function() {
    $ionicPopup.show({
                   template: '<div ><h>Thanks!</h><p ng-model="cur_price" ><br>Your order is completed<br></p><b>Price: ${{cur_price | number: 2}} </b><br><b ng-model="cur_price">Tax: ${{cur_price* 0.08 | number : 2}}  </b><img src="'+ imgUrl +'" ></img> </div>',
@@ -104,16 +107,16 @@ var prelen = 0;
  };
 
 
-
+//AWS apikey
 var apigClient = apigClientFactory.newClient({
-  apiKey: ''
+  apiKey: '736V9ti1zw1T7IbmNAnTC62BuzfN49fIahHtiKD9'
 });
 
 
 
 
  var coke, water, apple, banana, orange, cookie;
-
+//items
     coke = {
       id: 0,
       name: 'Coke',
@@ -192,6 +195,7 @@ var apigClient = apigClientFactory.newClient({
 
     };
     let response = "";
+    //pull items from AWS
     apigClient.ioTFetchPost(params,body,additionalParams).then(function(result){
       console.log(result);
       response = JSON.parse(result["data"]["body"]);
@@ -217,7 +221,7 @@ var apigClient = apigClientFactory.newClient({
             banana["s"] = Number(response[i]["amount"]) + ' kg';
             modify = true;
           }
-       
+
           banana["price"] = Number(response[i]["price"]);
           if(banana["quantity"] > 0)
             cart.push(banana);
@@ -228,7 +232,7 @@ var apigClient = apigClientFactory.newClient({
             coke["s"] = Number(response[i]["amount"]);
             modify = true;
           }
-         
+
           coke["price"] = Number(response[i]["price"]);
           if(coke["quantity"] > 0)
             cart.push(coke);
@@ -283,7 +287,7 @@ var apigClient = apigClientFactory.newClient({
       }
       // if(prelen!= cart.length)
       //   modify == true;
-      
+
       // prelen = cart.length;
       // if(modify == true){
           $scope.items = cart;
@@ -293,11 +297,14 @@ var apigClient = apigClientFactory.newClient({
             sum = sum + cart[j]["price"]*cart[j]["quantity"];
             j++;
           }
+
+          //update UI
           $scope.cur_price = sum;
           //$cordovaVibration.vibrate(100);
           if(isMobile.any() && modify == true)
+          //play alert audio
               $cordovaNativeAudio.play('click');
-      
+
     });
   }, 250);
 
