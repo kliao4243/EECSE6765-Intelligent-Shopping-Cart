@@ -2,6 +2,7 @@ import json
 import boto3
 import time
 
+# add a price dictionary to store all price information
 price_dict = {
 	"Banana": "59.99",
 	"Apple": "108.99",
@@ -11,6 +12,7 @@ price_dict = {
 	"Water": "20"
 }
 
+# recommendation algorithm
 def get_co_matrix(input_data):
     data = list()
     current_item = {
@@ -20,6 +22,7 @@ def get_co_matrix(input_data):
     data.append(current_item)
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('shopping_history')
+    # add current shopping record to covariance matrix
     response = table.scan()
     for entry in response["Items"]:
         temp = dict()
@@ -50,7 +53,7 @@ def get_co_matrix(input_data):
             else:
                 item_to_user[cur_item] = set()
                 item_to_user[cur_item].add(cur_id)
-
+    # add all previous shopping record into covariance matrix
     temp_co_matrix = [0] * user_count
     co_matrix = list()
     for i in range(0, user_count):
@@ -73,6 +76,7 @@ def recommend(input_data):
     max_w = 0
     user_weight = {}
     item_weight = {}
+    # calculate weight of each item based on user preference similarities
     for user in user_to_index.keys():
         if user == user_id:
             continue
@@ -114,6 +118,7 @@ def lambda_handler(event, context):
     current_list = dict()
     current_list['user_id'] = int(time.time())
     current_list['item'] = list()
+    # collect all unpaid items associated to this userid
     for item in response["Items"]:
         if (item["user_id"]==event["request"]) and (item["payment"]=="unpaid"):
             temp = dict()
@@ -127,6 +132,7 @@ def lambda_handler(event, context):
             current_list['item'].append(item["item"])
             result.append(temp)
     print(result)
+    # make recommendation
     recommend_temp = recommend(current_list)
     print("Recommendation", recommend_temp)
     recommend_item = {
@@ -134,6 +140,7 @@ def lambda_handler(event, context):
         'amount': recommend_temp,
         'price': price_dict[recommend_temp]
     }
+    # send to mobile application through API gateway
     result.append(recommend_item)
     return {
         'statusCode': 200,
